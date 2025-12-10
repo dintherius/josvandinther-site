@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jos van Dinther – Verhalenverteller</title>
+<style>
+body {
+margin: 0;
+font-family: "Georgia", serif;
+background: #faf5ee;
+color: #2d2a26;
+line-height: 1.7;
+}
+header {
+background: #f3e8d8;
+padding: 30px;
+text-align: center;
+border-bottom: 5px solid #d6c4aa;
+background-image: url('header-texture.png');
+background-size: cover;
+}
+nav a {
+margin: 0 18px;
+text-decoration: none;
+color: #4c3a2d;
+font-weight: bold;
+font-size: 1.1em;
+}
+nav a:hover {
+color: #000;
+}
+.container {
+max-width: 900px;
+margin: 50px auto;
+padding: 0 25px;
+}
+h1, h2, h3 {
+font-family: "Georgia", serif;
+color: #3b2f26;
+}
+.book-cover, .placeholder {
+max-width: 320px;
+border: 6px solid #d6c4aa;
+border-radius: 4px;
+margin-bottom: 20px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+line-height: 1.7;
+padding: 80px 0;
+background: #eee;
+color: #666;
+font-style: italic;
+}
+.ornament {
+width: 120px;
+opacity: 0.6;
+display: block;
+margin: 20px auto;
+}
+.newsletter-box {
+background: #fdfaf5;
+padding: 25px;
+border: 2px solid #d6c4aa;
+border-radius: 10px;
+margin-top: 40px;
+}
+input[type="email"] {
+padding: 12px;
+width: 75%;
+font-size: 1em;
+border: 1px solid #bba98f;
+border-radius: 6px;
+}
+button {
+padding: 12px 20px;
+background: #d6c4aa;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-weight: bold;
+}
+button:hover {
+background: #c1af96;
+}
+footer {
+margin-top: 60px;
+text-align: center;
+padding: 25px;
+background: #f3e8d8;
+border-top: 5px solid #d6c4aa;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Jos van Dinther – Verhalenverteller</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#boek">Boek</a>
+<a href="#over">Over mij</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="container" id="home">
+<img src="ornament.png" alt="ornament" class="ornament" />
+<h2>Welkom</h2>
+<p>Welkom op mijn website! Ik schrijf verhalen om te vermaken, vooral voor jongere lezers. Houd je van warme, grappige, prettige, fantasierijke, enigszins nostalgische en lange verhalen waar je uren in kan verdwalen, dan schrijf ik voor jou.</p>
+
+<div class="newsletter-box">
+<h3>Nieuwsbrief</h3>
+<p>Wil je bericht krijgen wanneer er een nieuw boek verschijnt? Vul hieronder je e-mailadres in.</p>
+<form action="https://formspree.io/f/example" method="POST">
+<input type="email" name="email" placeholder="jouw e-mailadres" required />
+<button type="submit">Aanmelden</button>
+</form>
+</div>
+</section>
+
+<section class="container" id="boek">
+<img src="ornament.png" alt="ornament" class="ornament" />
+<h2>Mijn Boek</h2>
+<div class="placeholder">PLAATSHOUDER: Boekcover komt hier</div>
+<p>Hier komt een beschrijving van het boek.</p>
+<h3>Koop het boek</h3>
+<ul>
+<li><a href="#">Bol.com</a></li>
+<li><a href="#">Amazon</a></li>
+<li><a href="#">Apple Books</a></li>
+</ul>
+<h3>Reacties & vragen</h3>
+<p>Laat hieronder je bericht achter. Ik lees graag wat je ervan vindt!</p>
+<div id="disqus_thread"></div>
+<script>
+var disqus_config = function () {
+this.page.url = window.location.href;
+this.page.identifier = "josvandinther-main";
+};
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://JOUW-DISQUS-NAAM.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Schakel JavaScript in om reacties te kunnen zien.</noscript>
+</section>
+
+<section class="container" id="over">
+<img src="ornament.png" alt="ornament" class="ornament" />
+<h2>Over mij</h2>
+<div class="placeholder">PLAATSHOUDER: Foto van Jos van Dinther</div>
+<p>Nu ik iets over mezelf moet schrijven, merk ik dat ik veel liever en makkelijker over anderen schrijf; vooral als dat door mij verzonnen personages zijn. Die zijn ook eigenlijk veel interessanter. Wat doet de schrijver er nou toe? Maar vooruit, als het dan toch moet: ik ben een dromerige jongen en mijn gedachten dwalen voortdurend af naar plekken waar ik eenvoudigweg aanschouw wat zich daar voltrekt. Dat schrijf ik dan zo goed en zo kwaad als het kan op en dan heb je een verhaal. Zo liggen er tientallen verhalen op de plank. Een ervan is gepubliceerd, maar de andere willen ook heel graag en klagen steen en been dat het allemaal zo lang duurt.</p>
+<p>Maar ja, ik heb ook nog zoiets als een serieuze baan en die vergt veel tijd en energie. Als diplomaat woon en werk ik in het buitenland; misschien komt dat wel een beetje terug in mijn verhalen. Momenteel woon ik in Peking, samen met mijn vrouw Young en onze zoon Han. Behalve dat ik graag schrijf, houd ik ook erg van tekenen en schilderen.</p>
+<p>Nu meander ik maar wat, wat je als schrijver natuurlijk nooit moet doen, maar ja, ik had al gezegd dat mijn gedachten nogal afdwalen. Snel mee ophouden dus. Maar wat ik nog zeggen wil: fijn dat je hier bent, nog fijner als je mijn boek hebt gelezen en er in meer of mindere mate van hebt genoten. Wil je nog meer verhalen horen die liggen te wachten op mijn pen, laat het even weten.</p>
+</section>
+
+<section class="container" id="contact">
+<img src="ornament.png" alt="ornament" class="ornament" />
+<h2>Contact</h2>
+<form action="https://formspree.io/f/example" method="POST">
+<label>Naam<br><input type="text" name="name" required></label><br><br>
+<label>E-mail<br><input type="email" name="email" required></label><br><br>
+<label>Bericht<br><textarea name="message" rows="6" required></textarea></label><br><br>
+<button type="submit">Verstuur</button>
+</form>
+</section>
+
+<footer>
+&copy; 2025 Jos van Dinther
+</footer>
+</body>
+</html>
