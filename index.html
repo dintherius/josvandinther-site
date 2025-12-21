@@ -1,182 +1,271 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <title>Mijn website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>De Limonadejagers — Jos van Dinther</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f0f8ff; 
-            color: #333; 
-            line-height: 1.6; 
-        }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-            z-index: -1;
-        }
+<style>
+:root {
+    --paper: #f6f1e7;
+    --ink: #2e2b28;
+    --blue: #4b6f9e;
+    --bubble: #f2b705;
+    --soft: rgba(0,0,0,0.05);
+}
 
-        header {
-            background-color: #4a90e2;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        header h1 {
-            margin: 0;
-            font-size: 3.5em;
-        }
+body {
+    margin: 0;
+    font-family: 'Crimson Pro', serif;
+    background-color: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+}
 
-        header p {
-            font-size: 1.6em;
-            max-width: 800px;
-            margin: 20px auto;
-        }
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
 
-        nav {
-            background-color: rgba(51, 51, 51, 0.9);
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(5px);
-        }
+/* Intro */
 
-        nav a {
-            color: white;
-            margin: 0 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
+.intro {
+    text-align: center;
+    margin-bottom: 120px;
+}
 
-        nav a:hover {
-            color: #a0d8f1;
-        }
+.intro img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
 
-        section {
-            padding: 80px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.intro p {
+    font-size: 1.4em;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        #book {
-            background-color: #fff8e1;
-            margin: 0 -20px;
-            padding: 80px 20px;
-        }
+/* Boek */
 
-        @media (min-width: 768px) {
-            #book {
-                margin: 0;
-                padding: 100px 60px;
-            }
-        }
+.book {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-bottom: 120px;
+}
 
-        #bio, #contact {
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-        }
+.book img {
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
 
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.book-text h2 {
+    font-size: 2.2em;
+    margin-top: 0;
+}
 
-        input, textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1em;
-        }
+.book-text p {
+    font-size: 1.2em;
+}
 
-        button {
-            background-color: #4a90e2;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1em;
-        }
+/* Fragment */
 
-        button:hover {
-            background-color: #357ab8;
-        }
+.fragment {
+    background: white;
+    padding: 60px;
+    margin-bottom: 120px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px var(--soft);
+    position: relative;
+}
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
+.fragment::before {
+    content: "● ● ●";
+    color: var(--bubble);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 6px;
+}
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
+.fragment p {
+    font-size: 1.25em;
+    font-style: italic;
+}
 
-            header p {
-                font-size: 1.3em;
-            }
+/* Auteur */
 
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
+.author {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 120px;
+}
 
-            section {
-                padding: 60px 15px;
-            }
-        }
-    </style>
+.author img {
+    max-width: 220px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.author p {
+    font-size: 1.15em;
+}
+
+/* Links */
+
+.links {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.links a {
+    display: inline-block;
+    margin: 10px 15px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    background-color: var(--blue);
+    padding: 12px 26px;
+    border-radius: 30px;
+}
+
+.links a:hover {
+    background-color: #3c5f8a;
+}
+
+/* Contact */
+
+.contact {
+    background: white;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px var(--soft);
+}
+
+.contact h2 {
+    margin-top: 0;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    font-family: 'Inter', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    background-color: var(--bubble);
+    color: #000;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0a800;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    padding: 40px 20px;
+}
+
+/* Responsive */
+
+@media (min-width: 768px) {
+    .book {
+        grid-template-columns: 1fr 1.2fr;
+        align-items: center;
+    }
+
+    .author {
+        grid-template-columns: 220px 1fr;
+        align-items: center;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Welkom</h1>
-    <p>Een rustige, elegante website met focus op inhoud en leesbaarheid.</p>
-</header>
+<main>
 
-<nav>
-    <a href="#book">Boek</a>
-    <a href="#bio">Over mij</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<section id="book">
-    <h2>Het boek</h2>
+<section class="intro">
+    <!-- Vervang dit door een detail of volledige omslag -->
+    <img src="cover-placeholder.jpg" alt="De Limonadejagers">
     <p>
-        Hier komt een beschrijving van het boek. Je kunt dit later uitbreiden
-        met afbeeldingen, citaten of aankooplinks.
+        Sommige laarzen zijn bedoeld om te lopen.  
+        Andere om te ontsnappen.
     </p>
 </section>
 
-<section id="bio">
-    <h2>Over mij</h2>
+<section class="book">
+    <img src="cover-placeholder.jpg" alt="Boekomslag De Limonadejagers">
+    <div class="book-text">
+        <h2>De Limonadejagers</h2>
+        <p>
+            Twee kinderen. Twee paar bijzondere laarzen.
+            Een reis die hoger, verder en vreemder voert dan bedoeld.
+        </p>
+        <p>
+            <em>De Limonadejagers</em> is een avontuurlijk en licht absurdistisch
+            verhaal voor jonge lezers — en voor iedereen die het soms nodig vindt
+            om even ergens anders te zijn.
+        </p>
+    </div>
+</section>
+
+<section class="fragment">
     <p>
-        Een korte biografie of artist statement. Houd het persoonlijk,
-        helder en zonder haast.
+        Ze hadden niet afgesproken om te gaan vliegen.
+        Dat was eenvoudigweg wat er gebeurde toen ze de laarzen aantrokken
+        en ontdekten dat de wereld zich niet altijd aan de regels hield.
     </p>
 </section>
 
-<section id="contact">
-    <h2>Contact</h2>
+<section class="author">
+    <img src="author-placeholder.jpg" alt="Jos van Dinther">
+    <p>
+        Jos van Dinther schrijft verhalen om in te verdwijnen.
+        <em>De Limonadejagers</em> ontstond uit een liefde voor klassieke
+        kinderboeken, absurdistische humor en het idee dat verbeelding
+        een volkomen legitieme vorm van transport is.
+    </p>
+</section>
+
+<section class="links">
+    <p>Het boek is te vinden bij:</p>
+    <a href="#">Boekhandel</a>
+    <a href="#">Online winkel</a>
+    <a href="#">Uitgever</a>
+</section>
+
+<section class="contact">
+    <h2>Schrijf me gerust</h2>
     <form>
         <input type="text" placeholder="Naam">
         <input type="email" placeholder="E-mailadres">
@@ -185,8 +274,10 @@
     </form>
 </section>
 
+</main>
+
 <footer>
-    © 2025 – Alle rechten voorbehouden
+    © 2025 — De Limonadejagers
 </footer>
 
 </body>
