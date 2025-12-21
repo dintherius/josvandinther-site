@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jos van Dinther - Kinderboekenschrijver</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f0f8ff; color: #333; line-height: 1.6; }
+        header { background-color: #4a90e2; color: white; padding: 60px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 3em; }
+        header p { font-size: 1.5em; }
+        nav { background-color: #333; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; margin: 0 20px; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #4a90e2; }
+        section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+        #home { background-color: #fff; text-align: center; }
+        #book img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        #bio { background-color: #e6f7ff; }
+        #contact { background-color: #fff; }
+        form { max-width: 600px; margin: 0 auto; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        button { background-color: #4a90e2; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #357ab8; }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px; }
+        .buy-links a { display: inline-block; margin: 10px; padding: 10px 20px; background-color: #4a90e2; color: white; text-decoration: none; border-radius: 5px; }
+        .buy-links a:hover { background-color: #357ab8; }
+        @media (max-width: 768px) { header h1 { font-size: 2em; } nav a { display: block; margin: 10px 0; } }
+    </style>
+</head>
+<body>
+    <header id="home">
+        <h1>Jos van Dinther</h1>
+        <p>Kinderboekenschrijver</p>
+        <p>Welkom op mijn website! Hier ontdek je mijn eerste jeugdboek en meer over mij als schrijver.</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#book">Mijn Boek</a>
+        <a href="#bio">Over Mij</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="book">
+        <h2>Mijn Eerste Jeugdboek</h2>
+        <img src="boekcover.jpg" alt="Cover van mijn boek"> <!-- Vervang door je eigen afbeelding URL -->
+        <h3>Titel van je boek</h3>
+        <p>Hier komt een pakkende omschrijving van je boek. Maak het spannend en aantrekkelijk voor kinderen en ouders!</p>
+        <div class="buy-links">
+            <a href="https://www.bol.com/nl/...">Koop bij Bol.com</a>
+            <a href="https://www.amazon.nl/...">Koop bij Amazon</a>
+            <!-- Voeg meer links toe -->
+        </div>
+    </section>
+
+    <section id="bio">
+        <h2>Over Mij</h2>
+        <p>Hier vertel je je biografie: wie je bent, waarom je schrijft, je inspiratie, enz. Voeg eventueel een foto van jezelf toe:</p>
+        <img src="jouw-foto.jpg" alt="Foto van Jos van Dinther" style="max-width: 300px; border-radius: 50%;">
+        <p>Voorbeeld: Ik ben Jos van Dinther en ik schrijf al jaren verhalen voor kinderen...</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Neem contact op voor vragen, lezingen of samenwerkingen!</p>
+        <form action="https://formspree.io/f/jouw-form-id" method="POST"> <!-- Gebruik gratis Formspree, Netlify Forms of vergelijkbaar -->
+            <input type="text" name="naam" placeholder="Je naam" required>
+            <input type="email" name="_replyto" placeholder="Je e-mail" required>
+            <textarea name="bericht" rows="5" placeholder="Je bericht" required></textarea>
+            <button type="submit">Verstuur</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Jos van Dinther - josvandinther.nl</p>
+        <!-- Voeg social links toe: <a href="...">Instagram</a> etc. -->
+    </footer>
+</body>
+</html>
