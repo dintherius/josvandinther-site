@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
-<title>De Limonadejagers — Jos van Dinther</title>
+<title>Jos van Dinther — schrijver</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -32,121 +32,120 @@ main {
     padding: 80px 20px;
 }
 
-/* Intro */
-.intro {
+/* HERO */
+.hero {
     text-align: center;
     margin-bottom: 100px;
 }
 
-.intro img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 30px;
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-.intro p {
-    font-size: 1.3em;
+.hero p {
+    font-size: 1.25em;
     max-width: 650px;
     margin: 0 auto;
 }
 
-/* Book */
-.book {
+/* FEATURED BOOK */
+.featured {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 100px;
+    gap: 30px;
+    margin-bottom: 120px;
 }
 
-.book img {
+.featured img {
     max-width: 320px;
     margin: 0 auto;
     display: block;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.book-text h2 {
+.featured-text h2 {
     font-size: 2.2em;
     margin-top: 0;
 }
 
-.book-text p {
+.featured-text p {
     font-size: 1.15em;
 }
 
-/* Fragment */
-.fragment {
-    background: white;
-    padding: 50px;
-    margin-bottom: 100px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px var(--soft);
-    position: relative;
-}
-
-.fragment::before {
-    content: "● ● ●";
-    color: var(--bubble);
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    letter-spacing: 6px;
-}
-
-.fragment p {
-    font-size: 1.2em;
-    font-style: italic;
-}
-
-/* Author */
-.author {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 100px;
-}
-
-.author img {
-    max-width: 220px;
-    border-radius: 50%;
-    margin: 0 auto;
-    display: block;
-}
-
-.author-text h2 {
-    margin-top: 0;
-    font-size: 2em;
-}
-
-.author-text p {
-    font-size: 1.1em;
-}
-
-/* Links */
+/* CTA BUTTONS */
 .links {
-    text-align: center;
-    margin-bottom: 100px;
+    margin-top: 20px;
 }
 
 .links a {
     display: inline-block;
-    margin: 10px 12px;
+    margin: 8px 10px 0 0;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     text-decoration: none;
     color: white;
-    background: var(--blue);
-    padding: 12px 24px;
+    background-color: var(--blue);
+    padding: 10px 18px;
     border-radius: 30px;
 }
 
-/* Contact */
+/* OTHER WORK */
+.books {
+    margin-bottom: 120px;
+}
+
+.books h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+}
+
+.book-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.book-item img {
+    width: 120px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.book-item h3 {
+    margin: 0;
+}
+
+/* FRAGMENT */
+.fragment {
+    background: white;
+    padding: 50px;
+    margin-bottom: 120px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px var(--soft);
+}
+
+.fragment p {
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+/* ABOUT */
+.about {
+    margin-bottom: 120px;
+}
+
+.about h2 {
+    font-size: 2em;
+}
+
+/* CONTACT */
 .contact {
     background: white;
     padding: 50px;
     border-radius: 8px;
     box-shadow: 0 10px 30px var(--soft);
+    margin-bottom: 80px;
 }
 
 input, textarea {
@@ -167,7 +166,7 @@ button {
     cursor: pointer;
 }
 
-/* Footer */
+/* FOOTER */
 footer {
     text-align: center;
     font-size: 0.9em;
@@ -175,16 +174,15 @@ footer {
     padding: 40px 20px;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (min-width: 768px) {
-    .book {
-        grid-template-columns: 1fr 1.2fr;
+    .featured {
+        grid-template-columns: 320px 1fr;
         align-items: center;
     }
 
-    .author {
-        grid-template-columns: 220px 1fr;
-        align-items: center;
+    .book-item {
+        grid-template-columns: 120px 1fr;
     }
 }
 </style>
@@ -194,56 +192,87 @@ footer {
 
 <main>
 
-<section class="intro">
-    <img src="cover-full.jpg" alt="De Limonadejagers">
-    <p>Placeholder quote of korte introductietekst over het boek.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Jos van Dinther</h1>
+    <p>
+        Schrijver van verhalen die zich ergens tussen observatie en verbeelding bewegen.
+        Diplomaat, tekenaar, en vooral iemand die graag kijkt voordat hij schrijft.
+    </p>
 </section>
 
-<section class="book">
-    <img src="book-cover.jpg" alt="Boekomslag De Limonadejagers">
+<!-- FEATURED BOOK -->
+<section class="featured">
 
-    <div class="book-text">
+    <img src="book-limonadejagers.jpg" alt="De Limonadejagers">
+
+    <div class="featured-text">
+
         <h2>De Limonadejagers</h2>
 
-        <p>Korte punchline over het verhaal.</p>
-
         <p>
-            <em>De Limonadejagers</em> is een avontuurlijk en licht absurdistisch
-            verhaal voor jonge lezers en iedereen die graag even ergens anders is.
+            Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
+            Een avontuurlijk en licht absurdistisch verhaal voor jonge lezers én volwassenen
+            die af en toe ergens anders willen zijn.
         </p>
+
+        <p><em>Uitgegeven — 2025</em></p>
+
+        <div class="links">
+            <a href="#">Koop bij boekhandel</a>
+            <a href="#">Online bestellen</a>
+            <a href="#">Meer over het boek</a>
+        </div>
+
     </div>
+
 </section>
 
+<!-- OTHER WORK -->
+<section class="books">
+
+    <h2>Werk in ontwikkeling</h2>
+
+    <div class="book-item">
+        <img src="placeholder.jpg" alt="Komend werk">
+
+        <div>
+            <h3>Nieuw werk (titel volgt)</h3>
+            <p>Korte omschrijving van het project of thema.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FRAGMENT -->
 <section class="fragment">
-    <p>“Placeholder citaat uit het boek of review.”</p>
+    <p>“Fragment of citaat dat de toon van je werk laat zien.”</p>
 </section>
 
-<section class="author">
+<!-- ABOUT -->
+<section class="about">
 
-    <img src="author.jpg" alt="Jos van Dinther">
+    <h2>Over de schrijver</h2>
 
-    <div class="author-text">
-        <h2>Over de schrijver</h2>
+    <p>
+        Ik schrijf omdat ik beter over anderen kan schrijven dan over mezelf.
+        Dat maakt het soms ook verdacht eerlijk.
+    </p>
 
-        <p>Placeholder introductie over jezelf.</p>
+    <p>
+        Ik woon en werk als diplomaat in het buitenland, momenteel in Peking.
+        Die omgeving sijpelt onvermijdelijk door in mijn verhalen.
+    </p>
 
-        <p>Placeholder tweede alinea over schrijfproces en stijl.</p>
-
-        <p>Placeholder derde alinea over werk, wonen, context.</p>
-
-        <p>Afsluitende persoonlijke noot + oproep tot contact of reactie.</p>
-    </div>
+    <p>
+        Naast schrijven teken en schilder ik, en verzamel ik ideeën die soms verhalen worden.
+    </p>
 
 </section>
 
-<section class="links">
-    <p>Het boek is verkrijgbaar bij:</p>
-    <a href="#">Boekhandel</a>
-    <a href="#">Online winkel</a>
-    <a href="#">Uitgever</a>
-</section>
-
+<!-- CONTACT -->
 <section class="contact">
+
     <h2>Contact</h2>
 
     <form>
@@ -252,6 +281,7 @@ footer {
         <textarea rows="5" placeholder="Bericht"></textarea>
         <button type="submit">Verstuur</button>
     </form>
+
 </section>
 
 </main>
