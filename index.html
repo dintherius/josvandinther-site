@@ -9,132 +9,130 @@
 
 <style>
 :root {
-    --bg: #f6f1e7;
     --ink: #2e2b28;
-    --muted: rgba(46,43,40,0.65);
-    --blue: #4b6f9e;
+    --soft: rgba(0,0,0,0.55);
     --accent: #f2b705;
 }
 
 /* BASE */
 body {
     margin: 0;
-    background: var(--bg);
+    background: #f6f1e7;
     color: var(--ink);
     font-family: 'Crimson Pro', serif;
-    line-height: 1.7;
 }
 
-/* GLOBAL LAYOUT */
-.section {
-    padding: 140px 6vw;
-}
-
-/* TYPOGRAPHY */
-h1,h2 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    margin: 0 0 20px 0;
-}
-
-p {
-    font-size: 1.15rem;
-    color: var(--ink);
-    max-width: 70ch;
-}
-
-/* HERO */
-.hero {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 60px;
-    align-items: center;
-    min-height: 90vh;
-}
-
-.hero img {
+/* SCENE SYSTEM */
+.scene {
+    position: relative;
     width: 100%;
-    height: auto;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.18);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.hero-text h1 {
-    font-size: 3.2rem;
+/* HERO IMAGE FULL BLEED */
+.scene img.bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) saturate(0.95);
 }
 
-.hero-text p {
+/* DARK OVERLAY FOR TEXT READABILITY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.55)
+    );
+}
+
+/* TEXT LAYER */
+.content {
+    position: relative;
+    max-width: 800px;
+    padding: 40px;
+    color: white;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    margin: 0 0 10px;
+}
+
+.content p {
     font-size: 1.3rem;
-    color: var(--muted);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
 }
 
-/* FEATURED BOOK */
-.book {
+/* BOOK SCENE */
+.book-scene {
+    background: #f6f1e7;
+    color: var(--ink);
+}
+
+.book-wrap {
     display: grid;
     grid-template-columns: 420px 1fr;
     gap: 80px;
     align-items: center;
+    padding: 120px 8vw;
 }
 
-.book img {
+.book-wrap img {
     width: 100%;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.2);
     transform: rotate(-1deg);
 }
 
-.book h2 {
-    font-size: 2.6rem;
+.book-text h2 {
+    font-size: 2.8rem;
+    margin-top: 0;
 }
 
-.book .tagline {
-    font-size: 1.2rem;
-    color: var(--muted);
-}
-
-/* CTA */
 .cta {
-    margin-top: 30px;
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    margin-top: 25px;
 }
 
 .cta a {
-    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
     padding: 12px 20px;
     border-radius: 999px;
+    text-decoration: none;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    background: var(--blue);
+    background: #4b6f9e;
     color: white;
 }
 
-.cta a:nth-child(2) {
-    background: transparent;
-    border: 1px solid var(--blue);
-    color: var(--blue);
+/* AVAILABILITY STRIP */
+.strip {
+    padding: 60px 8vw;
+    background: #fff;
+    font-size: 1.1rem;
+    color: rgba(0,0,0,0.7);
 }
 
-/* AVAILABILITY */
-.availability {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-}
-
-.availability p {
-    color: var(--muted);
-}
-
-/* AUTHOR */
-.author {
+/* AUTHOR SCENE */
+.author-scene {
+    background: #f2ecdf;
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 80px;
     align-items: center;
+    padding: 140px 8vw;
 }
 
-.author img {
+.author-scene img {
     width: 260px;
     height: 260px;
     object-fit: cover;
@@ -142,32 +140,31 @@ p {
     box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
 
-.author p {
-    color: var(--muted);
+.author-scene p {
+    max-width: 70ch;
+    color: rgba(0,0,0,0.7);
 }
 
-/* CONTACT */
+/* CONTACT SCENE */
 .contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    padding: 140px 8vw;
+    background: #fff;
 }
 
 input, textarea {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    border: 1px solid rgba(0,0,0,0.2);
     border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.2);
     font-family: 'Inter', sans-serif;
-    background: white;
 }
 
 button {
+    background: var(--accent);
+    border: none;
     padding: 14px 26px;
     border-radius: 999px;
-    border: none;
-    background: var(--accent);
     font-weight: 600;
     cursor: pointer;
 }
@@ -175,20 +172,13 @@ button {
 /* RESPONSIVE */
 @media (max-width: 900px) {
 
-    .hero,
-    .book,
-    .availability,
-    .author,
-    .contact {
+    .book-wrap,
+    .author-scene {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 100px 6vw;
-    }
-
-    .hero img {
-        order: 2;
+    .content h1 {
+        font-size: 2.4rem;
     }
 }
 </style>
@@ -196,68 +186,55 @@ button {
 
 <body>
 
-<!-- HERO -->
-<section class="section hero">
+<!-- SCENE 1: HERO -->
+<section class="scene">
 
-    <div class="hero-text">
+    <img class="bg" src="Volledige omslag zonder tekst klein.jpg" alt="De Limonadejagers illustratie">
+
+    <div class="overlay"></div>
+
+    <div class="content">
         <h1>Jos van Dinther</h1>
         <p>
-            Schrijver van verhalen die zich bewegen tussen observatie en verbeelding.
-            Diplomaat, tekenaar, en iemand die liever kijkt dan spreekt.
+            Schrijver van verhalen die ergens tussen observatie en verbeelding ontstaan.
         </p>
     </div>
 
-    <img src="Volledige omslag zonder tekst klein.jpg" alt="De Limonadejagers — illustratie">
-
 </section>
 
-<!-- BOOK -->
-<section class="section book">
+<!-- SCENE 2: BOOK -->
+<section class="book-scene">
 
-    <img src="Limonadejagers omslag Kobo kleine DEF.jpg" alt="De Limonadejagers cover">
+    <div class="book-wrap">
 
-    <div>
-        <h2>De Limonadejagers</h2>
+        <img src="Limonadejagers omslag Kobo kleine DEF.jpg" alt="De Limonadejagers cover">
 
-        <p class="tagline">
-            Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
-        </p>
+        <div class="book-text">
+            <h2>De Limonadejagers</h2>
 
-        <p>
-            Een avontuurlijk en licht absurdistisch verhaal voor jonge lezers
-            en volwassenen die soms willen verdwijnen in een andere wereld.
-        </p>
+            <p>
+                Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
+                Een avontuurlijk en licht absurdistisch verhaal voor jonge lezers en dromers.
+            </p>
 
-        <div class="cta">
-            <a href="#">Bol.com</a>
-            <a href="#">Amazon</a>
-            <a href="#">Kobo</a>
+            <div class="cta">
+                <a href="#">Bol.com</a>
+                <a href="#">Amazon</a>
+                <a href="#">Kobo</a>
+            </div>
         </div>
+
     </div>
 
 </section>
 
-<!-- AVAILABILITY / CONTEXT -->
-<section class="section availability">
-
-    <div>
-        <h2>Beschikbaarheid</h2>
-        <p>
-            Het boek is beschikbaar via verschillende platformen. Meer distributie volgt.
-        </p>
-    </div>
-
-    <div>
-        <p>
-            Dit verhaal is bedoeld om langzaam te lezen.
-            Niet als product, maar als ruimte.
-        </p>
-    </div>
-
+<!-- SCENE 3: AVAILABILITY -->
+<section class="strip">
+    Beschikbaar via geselecteerde boekhandels en online platforms. Meer volgt.
 </section>
 
-<!-- AUTHOR -->
-<section class="section author">
+<!-- SCENE 4: AUTHOR -->
+<section class="author-scene">
 
     <img src="author-placeholder.jpg" alt="Jos van Dinther">
 
@@ -265,32 +242,25 @@ button {
         <h2>Over de schrijver</h2>
 
         <p>
-            Ik schrijf liever over anderen dan over mezelf, wat waarschijnlijk al genoeg zegt.
-        </p>
-
-        <p>
-            Mijn gedachten dwalen vaak af naar plekken waar ik observeer in plaats van deelneem.
-            Daar ontstaan de verhalen.
+            Ik schrijf liever over anderen dan over mezelf.
+            Dat maakt het soms eenvoudiger en soms juist ingewikkelder.
         </p>
 
         <p>
             Ik woon en werk als diplomaat in het buitenland, momenteel in Peking.
-            Die omgeving sijpelt onvermijdelijk door in mijn werk.
+            De observaties daar vinden vaak hun weg naar mijn verhalen.
         </p>
 
     </div>
 
 </section>
 
-<!-- CONTACT -->
-<section class="section contact">
+<!-- SCENE 5: CONTACT -->
+<section class="contact">
 
-    <div>
-        <h2>Contact</h2>
-        <p>
-            Voor vragen, reacties of gewoon een bericht: je bent welkom om contact op te nemen.
-        </p>
-    </div>
+    <h2>Contact</h2>
+
+    <p>Als je iets wilt delen of vragen hebt, schrijf gerust.</p>
 
     <form>
         <input type="text" placeholder="Naam">
