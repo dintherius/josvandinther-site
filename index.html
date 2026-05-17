@@ -10,10 +10,12 @@
 <style>
 :root {
     --paper: #f6f1e7;
+    --paper2: #f2ecdf;
+    --paper3: #ffffff;
     --ink: #2e2b28;
     --blue: #4b6f9e;
     --bubble: #f2b705;
-    --soft: rgba(0,0,0,0.05);
+    --soft: rgba(0,0,0,0.06);
 }
 
 * { box-sizing: border-box; }
@@ -26,128 +28,85 @@ body {
     line-height: 1.7;
 }
 
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 80px 20px;
+/* FULL WIDTH BAND STRUCTURE */
+.band {
+    width: 100%;
+    padding: 100px 40px;
 }
+
+.band-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* alternating background rhythm */
+.band.hero { background: var(--paper); }
+.band.book { background: var(--paper2); }
+.band.availability { background: var(--paper3); }
+.band.author { background: var(--paper2); }
+.band.contact { background: var(--paper3); }
 
 /* HERO */
-.hero {
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.hero h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.25em;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-/* FEATURED BOOK */
-.featured {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 120px;
-}
-
-.featured img {
-    max-width: 320px;
-    margin: 0 auto;
+.hero img {
+    width: 100%;
+    height: auto;
     display: block;
+}
+
+/* BOOK SECTION */
+.book-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.book-grid img {
+    width: 100%;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.featured-text h2 {
-    font-size: 2.2em;
+.book-title {
+    font-size: 2.4em;
     margin-top: 0;
 }
 
-.featured-text p {
-    font-size: 1.15em;
-}
-
 /* CTA BUTTONS */
-.links {
-    margin-top: 20px;
-}
-
-.links a {
+.cta a {
     display: inline-block;
-    margin: 8px 10px 0 0;
+    margin: 10px 10px 0 0;
+    padding: 12px 22px;
+    background: var(--blue);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    text-decoration: none;
-    color: white;
-    background-color: var(--blue);
-    padding: 10px 18px;
-    border-radius: 30px;
 }
 
-/* OTHER WORK */
-.books {
-    margin-bottom: 120px;
+.cta a:hover {
+    background: #3c5f8a;
 }
 
-.books h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-}
-
-.book-item {
+/* AUTHOR */
+.author-grid {
     display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 25px;
-    margin-bottom: 40px;
+    grid-template-columns: 220px 1fr;
+    gap: 50px;
+    align-items: start;
 }
 
-.book-item img {
-    width: 120px;
+.author-grid img {
+    width: 220px;
+    border-radius: 50%;
     box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
-.book-item h3 {
-    margin: 0;
-}
-
-/* FRAGMENT */
-.fragment {
-    background: white;
-    padding: 50px;
-    margin-bottom: 120px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px var(--soft);
-}
-
-.fragment p {
-    font-style: italic;
-    font-size: 1.2em;
-}
-
-/* ABOUT */
-.about {
-    margin-bottom: 120px;
-}
-
-.about h2 {
-    font-size: 2em;
+.author-text h2 {
+    margin-top: 0;
 }
 
 /* CONTACT */
-.contact {
-    background: white;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px var(--soft);
-    margin-bottom: 80px;
-}
-
 input, textarea {
     width: 100%;
     padding: 14px;
@@ -166,129 +125,116 @@ button {
     cursor: pointer;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: #777;
-    padding: 40px 20px;
-}
-
 /* RESPONSIVE */
-@media (min-width: 768px) {
-    .featured {
-        grid-template-columns: 320px 1fr;
-        align-items: center;
+@media (max-width: 800px) {
+
+    .book-grid,
+    .author-grid {
+        grid-template-columns: 1fr;
     }
 
-    .book-item {
-        grid-template-columns: 120px 1fr;
-    }
 }
 </style>
 </head>
 
 <body>
 
-<main>
-
 <!-- HERO -->
-<section class="hero">
-    <h1>Jos van Dinther</h1>
-    <p>
-        Schrijver van verhalen die zich ergens tussen observatie en verbeelding bewegen.
-        Diplomaat, tekenaar, en vooral iemand die graag kijkt voordat hij schrijft.
-    </p>
-</section>
-
-<!-- FEATURED BOOK -->
-<section class="featured">
-
-    <img src="book-limonadejagers.jpg" alt="De Limonadejagers">
-
-    <div class="featured-text">
-
-        <h2>De Limonadejagers</h2>
-
-        <p>
-            Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
-            Een avontuurlijk en licht absurdistisch verhaal voor jonge lezers én volwassenen
-            die af en toe ergens anders willen zijn.
-        </p>
-
-        <p><em>Uitgegeven — 2025</em></p>
-
-        <div class="links">
-            <a href="#">Koop bij boekhandel</a>
-            <a href="#">Online bestellen</a>
-            <a href="#">Meer over het boek</a>
-        </div>
-
+<section class="band hero">
+    <div class="band-inner">
+        <img src="Volledige omslag zonder tekst klein.jpg" alt="De Limonadejagers — volledige omslag">
     </div>
-
 </section>
 
-<!-- OTHER WORK -->
-<section class="books">
+<!-- BOOK -->
+<section class="band book">
+    <div class="band-inner book-grid">
 
-    <h2>Werk in ontwikkeling</h2>
-
-    <div class="book-item">
-        <img src="placeholder.jpg" alt="Komend werk">
+        <img src="Limonadejagers omslag Kobo kleine DEF.jpg" alt="De Limonadejagers cover">
 
         <div>
-            <h3>Nieuw werk (titel volgt)</h3>
-            <p>Korte omschrijving van het project of thema.</p>
+            <h1 class="book-title">De Limonadejagers</h1>
+
+            <p>
+                Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
+            </p>
+
+            <p>
+                <em>De Limonadejagers</em> is een avontuurlijk en licht absurdistisch verhaal
+                voor jonge lezers en iedereen die graag even ergens anders is.
+            </p>
+
         </div>
     </div>
-
 </section>
 
-<!-- FRAGMENT -->
-<section class="fragment">
-    <p>“Fragment of citaat dat de toon van je werk laat zien.”</p>
+<!-- AVAILABILITY -->
+<section class="band availability">
+    <div class="band-inner">
+
+        <h2>Waar te lezen / bestellen</h2>
+
+        <p>
+            Het boek is beschikbaar via onderstaande kanalen. Meer opties worden later toegevoegd.
+        </p>
+
+        <div class="cta">
+            <a href="#">Bol.com</a>
+            <a href="#">Amazon</a>
+            <a href="#">Kobo</a>
+        </div>
+
+    </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about">
+<!-- AUTHOR -->
+<section class="band author">
+    <div class="band-inner author-grid">
 
-    <h2>Over de schrijver</h2>
+        <img src="author-placeholder.jpg" alt="Jos van Dinther">
 
-    <p>
-        Ik schrijf omdat ik beter over anderen kan schrijven dan over mezelf.
-        Dat maakt het soms ook verdacht eerlijk.
-    </p>
+        <div class="author-text">
 
-    <p>
-        Ik woon en werk als diplomaat in het buitenland, momenteel in Peking.
-        Die omgeving sijpelt onvermijdelijk door in mijn verhalen.
-    </p>
+            <h2>Over de schrijver</h2>
 
-    <p>
-        Naast schrijven teken en schilder ik, en verzamel ik ideeën die soms verhalen worden.
-    </p>
+            <p>
+                Ik schrijf liever over anderen dan over mezelf. Dat is waarschijnlijk ook precies wat ik hier aan het doen ben.
+            </p>
 
+            <p>
+                Ik ben een dromerig type. Mijn gedachten dwalen voortdurend af naar plekken waar ik vooral aanschouw wat zich daar voltrekt.
+                Dat schrijf ik dan zo goed en zo kwaad als het gaat op.
+            </p>
+
+            <p>
+                Ik woon en werk als diplomaat in het buitenland, momenteel in Peking, samen met mijn gezin.
+                Die omgeving sijpelt onvermijdelijk door in mijn verhalen.
+            </p>
+
+        </div>
+
+    </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section class="band contact">
+    <div class="band-inner">
 
-    <h2>Contact</h2>
+        <h2>Contact</h2>
 
-    <form>
-        <input type="text" placeholder="Naam">
-        <input type="email" placeholder="E-mailadres">
-        <textarea rows="5" placeholder="Bericht"></textarea>
-        <button type="submit">Verstuur</button>
-    </form>
+        <p>
+            Heb je een vraag, opmerking of wil je gewoon iets laten weten? Je bent welkom om me te schrijven.
+        </p>
 
+        <form>
+            <input type="text" placeholder="Naam">
+            <input type="email" placeholder="E-mailadres">
+            <textarea rows="6" placeholder="Bericht"></textarea>
+            <button type="submit">Verstuur</button>
+        </form>
+
+    </div>
 </section>
-
-</main>
-
-<footer>
-    © 2026 — Jos van Dinther
-</footer>
 
 </body>
 </html>
