@@ -5,7 +5,6 @@
 <title>De Limonadejagers — Jos van Dinther</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
@@ -17,14 +16,12 @@
     --soft: rgba(0,0,0,0.05);
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
     margin: 0;
     font-family: 'Crimson Pro', serif;
-    background-color: var(--paper);
+    background: var(--paper);
     color: var(--ink);
     line-height: 1.7;
 }
@@ -36,31 +33,29 @@ main {
 }
 
 /* Intro */
-
 .intro {
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
 }
 
 .intro img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .intro p {
-    font-size: 1.4em;
-    max-width: 600px;
+    font-size: 1.3em;
+    max-width: 650px;
     margin: 0 auto;
 }
 
-/* Boek */
-
+/* Book */
 .book {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 50px;
-    margin-bottom: 120px;
+    gap: 40px;
+    margin-bottom: 100px;
 }
 
 .book img {
@@ -76,15 +71,14 @@ main {
 }
 
 .book-text p {
-    font-size: 1.2em;
+    font-size: 1.15em;
 }
 
 /* Fragment */
-
 .fragment {
     background: white;
-    padding: 60px;
-    margin-bottom: 120px;
+    padding: 50px;
+    margin-bottom: 100px;
     border-radius: 8px;
     box-shadow: 0 10px 30px var(--soft);
     position: relative;
@@ -94,24 +88,23 @@ main {
     content: "● ● ●";
     color: var(--bubble);
     position: absolute;
-    top: -20px;
+    top: -18px;
     left: 50%;
     transform: translateX(-50%);
     letter-spacing: 6px;
 }
 
 .fragment p {
-    font-size: 1.25em;
+    font-size: 1.2em;
     font-style: italic;
 }
 
-/* Auteur */
-
+/* Author */
 .author {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 120px;
+    gap: 30px;
+    margin-bottom: 100px;
 }
 
 .author img {
@@ -121,72 +114,60 @@ main {
     display: block;
 }
 
-.author p {
-    font-size: 1.15em;
+.author-text h2 {
+    margin-top: 0;
+    font-size: 2em;
+}
+
+.author-text p {
+    font-size: 1.1em;
 }
 
 /* Links */
-
 .links {
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
 }
 
 .links a {
     display: inline-block;
-    margin: 10px 15px;
+    margin: 10px 12px;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     text-decoration: none;
     color: white;
-    background-color: var(--blue);
-    padding: 12px 26px;
+    background: var(--blue);
+    padding: 12px 24px;
     border-radius: 30px;
 }
 
-.links a:hover {
-    background-color: #3c5f8a;
-}
-
 /* Contact */
-
 .contact {
     background: white;
-    padding: 60px;
+    padding: 50px;
     border-radius: 8px;
     box-shadow: 0 10px 30px var(--soft);
-}
-
-.contact h2 {
-    margin-top: 0;
 }
 
 input, textarea {
     width: 100%;
     padding: 14px;
-    margin: 12px 0;
+    margin: 10px 0;
     font-family: 'Inter', sans-serif;
     border: 1px solid #ccc;
     border-radius: 6px;
 }
 
 button {
-    background-color: var(--bubble);
-    color: #000;
+    background: var(--bubble);
     border: none;
-    padding: 14px 28px;
+    padding: 14px 26px;
     border-radius: 30px;
-    font-family: 'Inter', sans-serif;
     font-weight: 600;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #e0a800;
-}
-
 /* Footer */
-
 footer {
     text-align: center;
     font-size: 0.9em;
@@ -195,7 +176,6 @@ footer {
 }
 
 /* Responsive */
-
 @media (min-width: 768px) {
     .book {
         grid-template-columns: 1fr 1.2fr;
@@ -215,78 +195,57 @@ footer {
 <main>
 
 <section class="intro">
-    <!-- Vervang dit door een detail of volledige omslag -->
-    <img src="Volledige omslag zonder tekst klein.jpg" alt="De Limonadejagers">
-    <p>
-        Citaat Lin Li...
-    </p>
+    <img src="cover-full.jpg" alt="De Limonadejagers">
+    <p>Placeholder quote of korte introductietekst over het boek.</p>
 </section>
 
 <section class="book">
-    <img src="Limonadejagers omslag Kobo kleine DEF.jpg" alt="Boekomslag De Limonadejagers">
+    <img src="book-cover.jpg" alt="Boekomslag De Limonadejagers">
+
     <div class="book-text">
         <h2>De Limonadejagers</h2>
-        <p>
-            Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
-        </p>
+
+        <p>Korte punchline over het verhaal.</p>
+
         <p>
             <em>De Limonadejagers</em> is een avontuurlijk en licht absurdistisch
-            verhaal voor jonge lezers en voor iedereen die het prettig vindt
-            om soms even ergens anders te vertoeven.
+            verhaal voor jonge lezers en iedereen die graag even ergens anders is.
         </p>
     </div>
 </section>
 
 <section class="fragment">
-    <p>
-        Citaat Bob...
-    </p>
+    <p>“Placeholder citaat uit het boek of review.”</p>
 </section>
 
 <section class="author">
-    <img src="author-placeholder.jpg" alt="Jos van Dinther">
 
-<h2>Over de schrijver</h2>
+    <img src="author.jpg" alt="Jos van Dinther">
 
-Nu ik iets over mezelf moet schrijven, merk ik dat ik veel liever en makkelijker over anderen schrijf; vooral als dat personages uit mijn verhalen zijn. Die zijn eigenlijk ook veel interessanter. Wat doet de schrijver er nou toe?
+    <div class="author-text">
+        <h2>Over de schrijver</h2>
 
-<br><br>
+        <p>Placeholder introductie over jezelf.</p>
 
-Maar vooruit, als het dan toch moet: ik ben een dromerig type. Mijn gedachten dwalen voortdurend af naar plekken waar ik vooral aanschouw wat zich daar voltrekt. Dat schrijf ik dan, zo goed en zo kwaad als het kan, op. En dan heb je een verhaal. Misschien herken je dat.
+        <p>Placeholder tweede alinea over schrijfproces en stijl.</p>
 
-<br><br>
+        <p>Placeholder derde alinea over werk, wonen, context.</p>
 
-Zo liggen er inmiddels tientallen ideeën voor verhalen op de plank. Slechts één ervan heeft de eindstreep gehaald en is gepubliceerd; de andere wachten ongeduldig en klagen steen en been dat het allemaal zo lang duurt.
+        <p>Afsluitende persoonlijke noot + oproep tot contact of reactie.</p>
+    </div>
 
-<br><br>
-
-Intussen is er ook nog zoiets als een serieuze baan, en die vergt tijd en energie. Als diplomaat woon en werk ik in het buitenland; misschien sijpelt dat hier en daar door in mijn verhalen. Momenteel woon ik in Peking, samen met mijn vrouw Young en onze zoon Han. Behalve schrijven houd ik ook erg van tekenen en schilderen.
-
-<br><br>
-
-Nu meander ik wat, wat je als schrijver natuurlijk nooit moet doen, maar ja, ik zei al dat mijn gedachten nogal afdwalen. Snel mee ophouden dus.
-
-<br><br>
-
-Wat ik nog wel wil zeggen: fijn dat je hier bent. Nog fijner als je mijn boek hebt gelezen en er, in meer of mindere mate, van hebt genoten. En als je nieuwsgierig bent naar de verhaalideeën die nog liggen te wachten op mijn pen, laat het gerust weten. Misschien helpt dat om er wat meer vaart achter te zetten.
-
-<br><br>
-
-Of als je me gewoon iets heel anders wilt zeggen: dat mag ook.
-    
-<br><br>
-Ten slotte: als je een recensie wil achterlaten op de plek waar je mijn boek hebt aangeschaft, dan help je mij en toekomstige lezers daar enorm mee. Veel dank vast daarvoor!
 </section>
 
 <section class="links">
-    <p>Het boek is te vinden bij:</p>
+    <p>Het boek is verkrijgbaar bij:</p>
     <a href="#">Boekhandel</a>
     <a href="#">Online winkel</a>
     <a href="#">Uitgever</a>
 </section>
 
 <section class="contact">
-    <h2>Schrijf me gerust</h2>
+    <h2>Contact</h2>
+
     <form>
         <input type="text" placeholder="Naam">
         <input type="email" placeholder="E-mailadres">
