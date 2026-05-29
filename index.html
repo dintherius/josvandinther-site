@@ -33,7 +33,6 @@ body {
     overflow: hidden;
 }
 
-/* HERO IMAGE FULL BLEED */
 .scene img.bg {
     position: absolute;
     width: 100%;
@@ -42,7 +41,6 @@ body {
     filter: contrast(1.05) saturate(0.95);
 }
 
-/* DARK OVERLAY FOR TEXT READABILITY */
 .overlay {
     position: absolute;
     inset: 0;
@@ -53,7 +51,7 @@ body {
     );
 }
 
-/* TEXT LAYER */
+/* HERO */
 .content {
     position: relative;
     max-width: 800px;
@@ -72,7 +70,7 @@ body {
     color: rgba(255,255,255,0.85);
 }
 
-/* BOOK SCENE */
+/* BOOK */
 .book-scene {
     background: #f6f1e7;
     color: var(--ink);
@@ -82,7 +80,7 @@ body {
     display: grid;
     grid-template-columns: 420px 1fr;
     gap: 80px;
-    align-items: center;
+    align-items: start;
     padding: 120px 8vw;
 }
 
@@ -97,8 +95,23 @@ body {
     margin-top: 0;
 }
 
+.book-text p {
+    line-height: 1.7;
+    font-size: 1.15rem;
+}
+
+.synopsis {
+    margin-top: 35px;
+    max-width: 70ch;
+}
+
+.synopsis p {
+    margin-bottom: 1.2em;
+}
+
+/* BUTTONS */
 .cta {
-    margin-top: 25px;
+    margin-top: 28px;
 }
 
 .cta a {
@@ -112,9 +125,14 @@ body {
     font-weight: 600;
     background: #4b6f9e;
     color: white;
+    transition: 0.2s ease;
 }
 
-/* AVAILABILITY STRIP */
+.cta a:hover {
+    transform: translateY(-2px);
+}
+
+/* STRIP */
 .strip {
     padding: 60px 8vw;
     background: #fff;
@@ -122,7 +140,7 @@ body {
     color: rgba(0,0,0,0.7);
 }
 
-/* AUTHOR SCENE */
+/* AUTHOR */
 .author-scene {
     background: #f2ecdf;
     display: grid;
@@ -145,7 +163,7 @@ body {
     color: rgba(0,0,0,0.7);
 }
 
-/* CONTACT SCENE */
+/* CONTACT */
 .contact {
     padding: 140px 8vw;
     background: #fff;
@@ -186,7 +204,7 @@ button {
 
 <body>
 
-<!-- SCENE 1: HERO -->
+<!-- HERO -->
 <section class="scene">
 
     <img class="bg" src="Volledige omslag zonder tekst klein.jpg" alt="De Limonadejagers illustratie">
@@ -202,7 +220,7 @@ button {
 
 </section>
 
-<!-- SCENE 2: BOOK -->
+<!-- BOOK -->
 <section class="book-scene">
 
     <div class="book-wrap">
@@ -210,35 +228,85 @@ button {
         <img src="Limonadejagers omslag Kobo kleine DEF.jpg" alt="De Limonadejagers cover">
 
         <div class="book-text">
+
             <h2>De Limonadejagers</h2>
 
             <p>
-                Hoe een kip en een ei twee kinderen op een reis rond de wereld stuurden.
-                Een avontuurlijk en licht absurdistisch verhaal voor jonge lezers en dromers.
+                Een fantasierijk avontuur voor kinderen vanaf 8 jaar —
+                en voor iedereen die af en toe graag even ontsnapt.
             </p>
 
-            <div class="cta">
-                <a href="#">Bol.com</a>
-                <a href="#">Amazon</a>
-                <a href="#">Kobo</a>
+            <div class="synopsis">
+
+                <p>
+                    Wanneer Lin Li en haar broertje Bob na de laatste schooldag voor de vakantie
+                    naar huis lopen, kunnen ze niet vermoeden dat één onverwachte ontmoeting
+                    in het bos alles zal veranderen.
+                    Een paar dagen later zijn ze gestrand aan de andere kant van de wereld.
+                    Om weer thuis te komen zijn ze helemaal op zichzelf aangewezen.
+                </p>
+
+                <p>
+                    Lin Li is slim en Bob bijzonder vindingrijk,
+                    al is dat laatste niet altijd even handig.
+                    In de vreemde oorden die ze op weg naar huis doorkruisen,
+                    gaat niets zoals verwacht en blijkt niet iedereen even behulpzaam.
+                </p>
+
+                <p>
+                    Koningen en postbodes, boeven en vissers,
+                    luchtkastelen en doolhoven:
+                    van alles komt op hun pad.
+                </p>
+
+                <p>
+                    Maar komen Bob en Lin Li ook echt weer thuis?
+                    En waarom zijn ze toch steeds op zoek naar limonade?
+                </p>
+
+                <p>
+                    Om daarachter te komen,
+                    moet je met hen mee op reis.
+                    Durf je dat?
+                </p>
+
             </div>
+
+            <div class="cta">
+                <a href="https://www.bol.com/nl/nl/p/de-limonadejagers/9300000300093750/"
+                   target="_blank" rel="noopener">
+                    Bol.com
+                </a>
+
+                <a href="https://www.amazon.nl/dp/B0H36RDMRR"
+                   target="_blank" rel="noopener">
+                    Amazon
+                </a>
+
+                <a href="https://www.kobo.com/us/en/ebook/de-limonadejagers-1"
+                   target="_blank" rel="noopener">
+                    Kobo
+                </a>
+            </div>
+
         </div>
 
     </div>
 
 </section>
 
-<!-- SCENE 3: AVAILABILITY -->
+<!-- STRIP -->
 <section class="strip">
-    Beschikbaar via geselecteerde boekhandels en online platforms. Meer volgt.
+    Verkrijgbaar als paperback en e-book via Bol, Amazon en Kobo.
 </section>
 
-<!-- SCENE 4: AUTHOR -->
+<!-- AUTHOR -->
 <section class="author-scene">
 
     <img src="author-placeholder.jpg" alt="Jos van Dinther">
 
     <div>
+
         <h2>Over de schrijver</h2>
 
         <p>
@@ -255,7 +323,7 @@ button {
 
 </section>
 
-<!-- SCENE 5: CONTACT -->
+<!-- CONTACT -->
 <section class="contact">
 
     <h2>Contact</h2>
