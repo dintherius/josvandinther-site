@@ -27,12 +27,10 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
 }
 
+/* HERO IMAGE */
 .scene img.bg {
     position: absolute;
     width: 100%;
@@ -41,33 +39,38 @@ body {
     filter: contrast(1.05) saturate(0.95);
 }
 
+/* LIGHTER OVERLAY */
 .overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.55)
+        rgba(0,0,0,0.18),
+        rgba(0,0,0,0.35)
     );
 }
 
-/* HERO */
+/* HERO TEXT */
 .content {
-    position: relative;
-    max-width: 800px;
+    position: absolute;
+    top: 14%;
+    left: 8%;
+    max-width: 520px;
     padding: 40px;
     color: white;
 }
 
 .content h1 {
-    font-size: 3.5rem;
-    margin: 0 0 10px;
+    font-size: 4rem;
+    margin: 0 0 18px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
 }
 
 .content p {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     line-height: 1.6;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.92);
 }
 
 /* BOOK */
@@ -195,8 +198,18 @@ button {
         grid-template-columns: 1fr;
     }
 
+    .content {
+        top: 10%;
+        left: 4%;
+        padding: 20px;
+    }
+
     .content h1 {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.1rem;
     }
 }
 </style>
@@ -213,8 +226,9 @@ button {
 
     <div class="content">
         <h1>Jos van Dinther</h1>
+
         <p>
-            Schrijver van verhalen die ergens tussen observatie en verbeelding ontstaan.
+            “Gewoon even verdwijnen in een verhaal.”
         </p>
     </div>
 
@@ -273,6 +287,7 @@ button {
             </div>
 
             <div class="cta">
+
                 <a href="https://www.bol.com/nl/nl/p/de-limonadejagers/9300000300093750/"
                    target="_blank" rel="noopener">
                     Bol.com
@@ -287,6 +302,7 @@ button {
                    target="_blank" rel="noopener">
                     Kobo
                 </a>
+
             </div>
 
         </div>
@@ -328,7 +344,9 @@ button {
 
     <h2>Contact</h2>
 
-    <p>Als je iets wilt delen of vragen hebt, schrijf gerust.</p>
+    <p>
+        Als je iets wilt delen of vragen hebt, schrijf gerust.
+    </p>
 
     <form>
         <input type="text" placeholder="Naam">
