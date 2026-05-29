@@ -352,12 +352,19 @@ button {
         Als je iets wilt delen of vragen hebt, schrijf gerust.
     </p>
 
-    <form>
-        <input type="text" placeholder="Naam">
-        <input type="email" placeholder="E-mailadres">
-        <textarea rows="6" placeholder="Bericht"></textarea>
-        <button type="submit">Verstuur</button>
-    </form>
+    <form action="https://formspree.io/f/mdajbjvy" method="POST">
+
+    <input type="hidden" name="_subject" value="Nieuw bericht via website">
+
+    <input type="text" name="name" placeholder="Naam">
+
+    <input type="email" name="email" placeholder="E-mailadres">
+
+    <textarea name="message" rows="6" placeholder="Bericht"></textarea>
+
+    <button type="submit">Verstuur</button>
+
+</form>
 
 </section>
 
