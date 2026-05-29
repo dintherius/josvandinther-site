@@ -344,7 +344,7 @@ button {
 </section>
 
 <!-- CONTACT -->
-<section class="contact">
+<section class="contact" id="contact">
 
     <h2>Contact</h2>
 
@@ -354,17 +354,37 @@ button {
 
     <form action="https://formspree.io/f/mdajbjvy" method="POST">
 
-    <input type="hidden" name="_subject" value="Nieuw bericht via website">
+        <input type="hidden" name="_subject" value="Nieuw bericht via website">
 
-    <input type="text" name="name" placeholder="Naam">
+        <input
+            type="hidden"
+            name="_next"
+            value="https://josvandinther.nl/#contact-verzonden">
 
-    <input type="email" name="email" placeholder="E-mailadres">
+        <input
+            type="text"
+            name="name"
+            placeholder="Naam">
 
-    <textarea name="message" rows="6" placeholder="Bericht"></textarea>
+        <input
+            type="email"
+            name="email"
+            placeholder="E-mailadres">
 
-    <button type="submit">Verstuur</button>
+        <textarea
+            name="message"
+            rows="6"
+            placeholder="Bericht"></textarea>
 
-</form>
+        <button type="submit">Verstuur</button>
+
+    </form>
+
+    <div id="contact-verzonden">
+        <p>
+            <strong>Bedankt — je bericht is verzonden.</strong>
+        </p>
+    </div>
 
 </section>
 
